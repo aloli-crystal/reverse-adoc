@@ -230,19 +230,19 @@ describe ReverseAdoc do
     describe "complete document" do
       it "converts a full HTML document" do
         html = <<-HTML
-        <html>
-        <head><title>Test</title></head>
-        <body>
-          <h1>Title</h1>
-          <p>A paragraph with <strong>bold</strong> and <em>italic</em> text.</p>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-          </ul>
-          <pre><code class="language-crystal">puts "Hello"</code></pre>
-        </body>
-        </html>
-        HTML
+          <html>
+          <head><title>Test</title></head>
+          <body>
+            <h1>Title</h1>
+            <p>A paragraph with <strong>bold</strong> and <em>italic</em> text.</p>
+            <ul>
+              <li>Item 1</li>
+              <li>Item 2</li>
+            </ul>
+            <pre><code class="language-crystal">puts "Hello"</code></pre>
+          </body>
+          </html>
+          HTML
 
         result = ReverseAdoc.convert(html)
         result.should contain("= Title")

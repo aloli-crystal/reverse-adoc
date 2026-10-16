@@ -11,7 +11,7 @@ Ajoutez la dependance dans votre `shard.yml` :
 dependencies:
   reverse-adoc:
     github: aloli-crystal/reverse-adoc
-    version: "~> 2.0.0.5"
+    version: "~> 2.0.0.6"
 ----
 
 Lancez `shards install`.

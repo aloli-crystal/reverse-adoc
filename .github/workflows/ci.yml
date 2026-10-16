@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        crystal: ["1.19.0", "1.19.1"]
+        crystal: ["1.19.0", "1.22.0"]
     container:
       image: crystallang/crystal:${{ matrix.crystal }}
     steps:
@@ -19,12 +19,12 @@ jobs:
       - run: shards install
       - run: crystal spec
       - run: crystal tool format --check src/ spec/
-      - run: bin/ameba
+      - run: crystal run lib/ameba/bin/ameba.cr --
 
   build:
     runs-on: ubuntu-latest
     container:
-      image: crystallang/crystal:1.19.1
+      image: crystallang/crystal:1.22.0
     steps:
       - uses: actions/checkout@v4
       - run: shards build
