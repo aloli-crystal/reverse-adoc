@@ -24,7 +24,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: crystallang/crystal:1.21.1.1
+      image: crystallang/crystal:1.21.1
     steps:
       - uses: actions/checkout@v4
       - run: shards build
